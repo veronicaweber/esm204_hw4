@@ -21,9 +21,22 @@ bau_temp = function(t, T){
   return(tau)
 }
 
+# Function for fraction of economic activity that is retained ----
+
+# "consumption" = economic activity)
 # K(t) = exp(−beta*tau(t)^2)
+
+econ_activity_retained = function(t, tau){
+  k_t = exp(-beta*tau)
+  return(k_t)
+}
+
 # C(t) = K(t)exp(gt)
+
+
 # U(C) = (C1−eta)/(1 − eta)
+
+# Function for discount rate ----
 
 # Discount rate - Ramsey rule
 discount_rate = function(delta, eta, g){
