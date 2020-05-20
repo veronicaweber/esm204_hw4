@@ -24,8 +24,8 @@ bau_temp = function(t, T){
 # Function for fraction of economic activity that is retained ----
 
 # "consumption" = economic activity)
-# K(t) = exp(−beta*tau(t)^2)
 
+# K(t) = exp(−beta*tau(t)^2)
 econ_activity_retained = function(t, beta, tau){
   k_t = exp(-beta*tau)
   return(k_t)
@@ -34,14 +34,20 @@ econ_activity_retained = function(t, beta, tau){
 # Function for total consumption at time t ----
 
 # C(t) = K(t)exp(gt)
-
 consumption = function(t, k_t, g){
   c_t = k_t*exp(g*t)
   return(c_t)
 }
 
 
+# Function for society's utility ---
+
 # U(C) = (C1−eta)/(1 − eta)
+society_utility = function(c_t, eta){
+  u_c = (c_t^(1-eta))/(1-eta)
+  return(u_c)
+}
+
 
 # Function for discount rate ----
 
