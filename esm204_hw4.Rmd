@@ -1,0 +1,33 @@
+---
+title: "ESM 204 HW 4"
+author: "Peter Omasta, Jennifer Truong, and Veronica Weber"
+date: "5/18/2020"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE,
+                      message = FALSE,
+                      warning = FALSE)
+```
+
+```{r Functions}
+
+# tau(t) = min(Tt/100, T)
+# K(t) = exp(−beta*tau(t)^2)
+# C(t) = K(t)exp(gt)
+# U(C) = (C1−eta)/(1 − eta)
+
+# Discount rate - Ramsey rule
+discount_rate = function(delta, eta, g){
+  r = delta + eta*g
+  return(r)
+  }
+```
+
+```{r Parameters}
+
+# Use the following base case parameters for this model: delta = .005, eta = .5, g = .01, beta = .05.
+
+```
+
