@@ -26,7 +26,7 @@ bau_temp = function(t, T){
 # "consumption" = economic activity)
 # K(t) = exp(−beta*tau(t)^2)
 
-econ_activity_retained = function(t, tau){
+econ_activity_retained = function(t, beta, tau){
   k_t = exp(-beta*tau)
   return(k_t)
 }
