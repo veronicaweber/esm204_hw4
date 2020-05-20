@@ -31,7 +31,14 @@ econ_activity_retained = function(t, beta, tau){
   return(k_t)
 }
 
+# Function for total consumption at time t ----
+
 # C(t) = K(t)exp(gt)
+
+consumption = function(t, k_t, g){
+  c_t = k_t*exp(g*t)
+  return(c_t)
+}
 
 
 # U(C) = (C1−eta)/(1 − eta)
