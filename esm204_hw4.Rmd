@@ -101,6 +101,8 @@ temperature_df = tibble(year, temp_t_0, temp_t_2, temp_t_8) %>%
 
 ```{r Plot of temperature vs time}
 
+# Code doesn't work for now - need to figure out what's wrong
+
 ggplot() +
   geom_point(temperature_df,
              aes(x = year, y = no_cc),
@@ -113,3 +115,29 @@ ggplot() +
              color = "red")
 ```
 
+### b) Consumption over time
+
+- no climate change (T = 0)
+- moderate climate change (T = 2)
+- extreme climate change (T = 8)
+
+```{r Finding consumption over time}
+
+# Find consumption under T = 0
+consumption_t_0 = lapply(year, econ_activity_retained, beta = .05, tau = temp_t_0)
+
+# Find consumption under T = 2
+temp_t_2 = lapply(year, bau_temp, T = 2)
+
+# Find consumption under T = 8
+temp_t_8 = lapply(year, bau_temp, T = 8)
+
+# Create data frame
+temperature_df = tibble(year, temp_t_0, temp_t_2, temp_t_8) %>% 
+  rename("no_cc" = "temp_t_0",
+         "moderate_cc" = "temp_t_2",
+         "extreme_cc" = "temp_t_8")
+
+```
+
+### c) Undiscounted utility over time
