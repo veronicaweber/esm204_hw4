@@ -77,9 +77,11 @@ year = c(0:200)
 - moderate climate change (T = 2)
 - extreme climate change (T = 8)
 
-```{r}
+```{r Finding temperature over time}
 
 # Find BAU temp under T = 0
-
 temp_t_0 = lapply(year, bau_temp, T = 0)
+
+# Find BAU temp under T = 2
+temp_t_2 = lapply(year, bau_temp, T = 2)
 ```
