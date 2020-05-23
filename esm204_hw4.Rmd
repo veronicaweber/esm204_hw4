@@ -63,9 +63,23 @@ discount_rate = function(delta, eta, g){
 ```{r Parameters}
 
 # Setting up vector for time t
-t = c(0:200)
+year = c(0:200)
 
 # Use the following base case parameters for this model: delta = .005, eta = .5, g = .01, beta = .05.
 
 ```
 
+# 1. Plots 
+
+### a) temperature over time
+
+- no climate change (T = 0)
+- moderate climate change (T = 2)
+- extreme climate change (T = 8)
+
+```{r}
+
+# Find BAU temp under T = 0
+
+temp_t_0 = lapply(year, bau_temp, T = 0)
+```
