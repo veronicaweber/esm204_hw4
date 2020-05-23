@@ -64,7 +64,7 @@ discount_rate = function(delta, eta, g){
   }
 ```
 
-```{r Parameters}
+```{r Inputs}
 
 # Setting up vector for time t
 year = c(0:200)
@@ -148,11 +148,17 @@ temperature_df = tibble(year, temp_t_0, temp_t_2, temp_t_8) %>%
 
 In other words, suppose we know for sure that under BAU, climate change will eventually lead to a 4.4 degree increase in temperature.
 
+Use the following base case parameters for this model: delta = .005, eta = .5, g = .01, beta = .05.
+
 ```{r Find Present Value Utility Under T = 4.4}
 
 # Find BAU temp under T = 4.4 ----
 
 temp_t_44 = lapply(year, bau_temp, T = 4.4)
+
+# Find discount rate ----
+
+discount_rate_cc = discount_rate(delta = .005, eta = .5, g = .01)
 
 ```
 
@@ -161,4 +167,4 @@ temp_t_44 = lapply(year, bau_temp, T = 4.4)
 
 ### c) Back to the original parameters, suppose we could completely prevent climate change from occurring (so T = 0 instead of T = 4.4) but doing so would require giving up a fraction theta of consumption every year for the next 200 years. What is the maximum value of theta society would be willing to endure every year to completely prevent climate change? Call this theta*.
 
-### d) Suppose we are uncertain about T, but it has the following probability distribution: T = 2 (with probability .2), T = 4 (with probability .5), and T = 6 (withprobability .3). Calculate theta* under uncertainty over T.
+### d) Suppose we are uncertain about T, but it has the following probability distribution: T = 2 (with probability .2), T = 4 (with probability .5), and T = 6 (with probability .3). Calculate theta* under uncertainty over T.
