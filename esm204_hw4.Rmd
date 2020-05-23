@@ -160,6 +160,12 @@ temp_t_44 = lapply(year, bau_temp, T = 4.4)
 
 discount_rate_cc = discount_rate(delta = .005, eta = .5, g = .01)
 
+# Find present value with climate change ----
+
+# Find present value without climate change ----
+
+# Find percentage loss ----
+
 ```
 
 
