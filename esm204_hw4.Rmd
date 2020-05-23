@@ -144,7 +144,18 @@ temperature_df = tibble(year, temp_t_0, temp_t_2, temp_t_8) %>%
 
 # 2. Analysis
 
-### a) Suppose T = 4.4. In other words, suppose we know for sure that under BAU, climate change will eventually lead to a 4.4 degree increase in temperature. What is the present value (i.e. discounted) utility over the next 200 years with climate change? What is the present value utility without climate change? What is the percentage loss in present value utility from climate change (call this L)?
+### a) Suppose T = 4.4. What is the present value (i.e. discounted) utility over the next 200 years with climate change? What is the present value utility without climate change? What is the percentage loss in present value utility from climate change (call this L)?
+
+In other words, suppose we know for sure that under BAU, climate change will eventually lead to a 4.4 degree increase in temperature.
+
+```{r Find Present Value Utility Under T = 4.4}
+
+# Find BAU temp under T = 4.4 ----
+
+temp_t_44 = lapply(year, bau_temp, T = 4.4)
+
+```
+
 
 ### b) Now show how sensitive your calculation of L is to the following parameters: T, g, eta, and beta. To do so, calculate the % change in L that arises from a 10% increase in each of these parameters.
 
