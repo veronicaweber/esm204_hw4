@@ -84,4 +84,7 @@ temp_t_0 = lapply(year, bau_temp, T = 0)
 
 # Find BAU temp under T = 2
 temp_t_2 = lapply(year, bau_temp, T = 2)
+
+# Find BAU temp under T = 8
+temp_t_8 = lapply(year, bau_temp, T = 8)
 ```
